@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * Created by Edna Ceniza on 11/08/2017.
@@ -15,6 +17,12 @@ public class LeagueActivity extends AppCompatActivity implements View.OnClickLis
     Button next;
     Button choice;
 
+    Button mens;
+    Button womens;
+    Button coed;
+
+    public static final int requestskill = 101;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -23,9 +31,6 @@ public class LeagueActivity extends AppCompatActivity implements View.OnClickLis
         next = (Button) findViewById(R.id.next);
         next.setEnabled(false);
 
-        Button mens;
-        Button womens;
-        Button coed;
         mens = (Button) findViewById(R.id.mens);
         womens = (Button) findViewById(R.id.womens);
         coed = (Button) findViewById(R.id.coed);
@@ -34,12 +39,6 @@ public class LeagueActivity extends AppCompatActivity implements View.OnClickLis
 
             @Override
             public void onClick(View view) {
-                Button mens;
-                Button womens;
-                Button coed;
-                mens = (Button) findViewById(R.id.mens);
-                womens = (Button) findViewById(R.id.womens);
-                coed = (Button) findViewById(R.id.coed);
 
                 Button next;
                 next = (Button) findViewById(R.id.next);
@@ -50,31 +49,21 @@ public class LeagueActivity extends AppCompatActivity implements View.OnClickLis
 
                 addListenerButton();
 
-                womens.setBackgroundResource(R.drawable.gradient);
-                coed.setBackgroundResource(R.drawable.gradient);
             }
         });
 
         womens.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Button mens;
-                Button womens;
-                Button coed;
-                mens = (Button) findViewById(R.id.mens);
-                womens = (Button) findViewById(R.id.womens);
-                coed = (Button) findViewById(R.id.coed);
 
                 Button next;
                 next = (Button) findViewById(R.id.next);
                 next.setEnabled(true);
                 next.setBackgroundResource(R.drawable.button);
 
+                choice = (Button) findViewById(R.id.womens);
+
                 addListenerButton();
-
-                coed.setBackgroundResource(R.drawable.gradient);
-                mens.setBackgroundResource(R.drawable.gradient);
-
 
             }
         });
@@ -82,30 +71,18 @@ public class LeagueActivity extends AppCompatActivity implements View.OnClickLis
         coed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Button mens;
-                Button womens;
-                Button coed;
-                mens = (Button) findViewById(R.id.mens);
-                womens = (Button) findViewById(R.id.womens);
-                coed = (Button) findViewById(R.id.coed);
 
                 Button next;
                 next = (Button) findViewById(R.id.next);
                 next.setEnabled(true);
                 next.setBackgroundResource(R.drawable.button);
 
+                choice = (Button) findViewById(R.id.coed);
+
                 addListenerButton();
 
-                womens.setBackgroundResource(R.drawable.gradient);
-                mens.setBackgroundResource(R.drawable.gradient);
             }
         });
-
-
-
-
-
-
 
     }
 
@@ -116,20 +93,47 @@ public class LeagueActivity extends AppCompatActivity implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
-        final Context context = this;
-        Intent intent = new Intent(context, SkillActivity.class);
-        startActivity(intent);
+        //final Context context = this;
+        Intent intent = new Intent(LeagueActivity.this, SkillActivity.class);
+        startActivityForResult(intent, requestskill);
 
-        Button mens;
-        Button womens;
-        Button coed;
-        mens = (Button) findViewById(R.id.mens);
-        womens = (Button) findViewById(R.id.womens);
-        coed = (Button) findViewById(R.id.coed);
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+
+        TextView iam = (TextView) findViewById(R.id.iam);
+        TextView skill = (TextView) findViewById(R.id.uskill);
+
+        iam.setVisibility(View.VISIBLE);
+        String userSkill = data.getStringExtra("SKILL");
+        skill.setText(userSkill);
+        skill.setVisibility(View.VISIBLE);
+
+        next.setVisibility(View.GONE);
 
         mens.setEnabled(false);
         womens.setEnabled(false);
         coed.setEnabled(false);
+
+        if(choice.getId()==R.id.mens){
+            womens.setBackgroundResource(R.drawable.gradient);
+            coed.setBackgroundResource(R.drawable.gradient);
+        }
+
+        if(choice.getId()==R.id.womens) {
+            coed.setBackgroundResource(R.drawable.gradient);
+            mens.setBackgroundResource(R.drawable.gradient);
+        }
+
+        if(choice.getId()==R.id.coed) {
+            womens.setBackgroundResource(R.drawable.gradient);
+            mens.setBackgroundResource(R.drawable.gradient);
+        }
+
+
     }
 
 

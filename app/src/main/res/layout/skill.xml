@@ -18,7 +18,7 @@
 
         <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/imageView"
@@ -36,7 +36,7 @@
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/imageView"
                 android:layout_marginTop="35dp"
-                android:layout_marginBottom="35dp"
+                android:layout_marginBottom="25dp"
                 android:text="@string/i_am_a"
                 android:textAlignment="center"
                 android:textAllCaps="false"
@@ -47,8 +47,8 @@
                 android:background="@drawable/button"
                 android:alpha="0.7"
                 android:textColor="#FFFFFF"
-                android:id="@+id/beginnerBtn"
-                android:layout_width="155dp"
+                android:id="@+id/beginner"
+                android:layout_width="135dp"
                 android:layout_height="60dp"
                 android:text="@string/beginner"
                 android:textSize="20sp"
@@ -62,19 +62,18 @@
                 android:background="@drawable/button"
                 android:alpha="0.7"
                 android:textColor="#FFFFFF"
-                android:layout_width="155dp"
+                android:layout_width="135dp"
                 android:layout_height="60dp"
                 android:text="@string/baller"
                 android:textSize="20sp"
                 android:textAllCaps="false"
-                android:layout_marginTop="0dp"
-                android:layout_alignTop="@+id/beginnerBtn"
+                android:layout_below="@+id/thrdscreenText"
                 android:layout_alignRight="@+id/btnfinish"
                 android:layout_alignEnd="@+id/btnfinish" />
 
             <Button
                 android:id="@+id/btnfinish"
-                android:background="@drawable/button"
+                android:background="@drawable/gradient"
                 android:alpha="0.7"
                 android:textColor="#FFFFFF"
                 android:layout_width="match_parent"
@@ -84,7 +83,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginBottom="10dp"
-                android:layout_marginTop="350dp"
+                android:layout_marginTop="300dp"
                 android:text="@string/finish"
                 android:textSize="20sp" />
 

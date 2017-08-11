@@ -14,12 +14,46 @@ import android.widget.Button;
 public class SkillActivity extends AppCompatActivity implements View.OnClickListener {
 
     Button btnfinish;
+    Button beginner;
+    Button baller;
+    Button skill;
 
    @Override
    protected void onCreate(Bundle savedInstanceState){
        super.onCreate(savedInstanceState);
        setContentView(R.layout.skill);
-       addListenerButton();
+
+       btnfinish = (Button) findViewById(R.id.btnfinish);
+       btnfinish.setOnClickListener(this);
+
+       beginner = (Button) findViewById(R.id.beginner);
+       baller = (Button) findViewById(R.id.baller);
+
+       btnfinish.setEnabled(false);
+
+       beginner.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+
+               btnfinish.setBackgroundResource(R.drawable.button);
+               btnfinish.setEnabled(true);
+               skill = (Button) findViewById(R.id.beginner);
+
+               addListenerButton();
+           }
+       });
+
+       baller.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               btnfinish.setBackgroundResource(R.drawable.button);
+               btnfinish.setEnabled(true);
+               skill = (Button) findViewById(R.id.baller);
+
+               addListenerButton();
+           }
+       });
+
         }
 
 
@@ -30,8 +64,11 @@ public class SkillActivity extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
-        final Context context = this;
-        Intent intent = new Intent(context, LeagueActivity.class);
-        startActivity(intent);
+        //final Context context = this;
+        String choice = skill.getText().toString();
+        Intent intent = new Intent();
+        intent.putExtra("SKILL",choice);
+        setResult(101,intent);
+        finish();
     }
 }
