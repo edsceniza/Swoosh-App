@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/skill"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/beginner_baller_bg"
+    tools:context="edna.ceniza.com.swoosh.MainActivity">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="20dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:paddingTop="20dp"
+                android:src="@drawable/swoosh_logo" />
+
+            <TextView
+                android:id="@+id/thrdscreenText"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/imageView"
+                android:layout_marginTop="35dp"
+                android:layout_marginBottom="35dp"
+                android:text="@string/i_am_a"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="#FFF"
+                android:textSize="16sp" />
+
+            <Button
+                android:background="@drawable/button"
+                android:alpha="0.7"
+                android:textColor="#FFFFFF"
+                android:id="@+id/beginnerBtn"
+                android:layout_width="155dp"
+                android:layout_height="60dp"
+                android:text="@string/beginner"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:layout_below="@+id/thrdscreenText"
+                android:layout_alignLeft="@+id/btnfinish"
+                android:layout_alignStart="@+id/btnfinish" />
+
+            <Button
+                android:id="@+id/baller"
+                android:background="@drawable/button"
+                android:alpha="0.7"
+                android:textColor="#FFFFFF"
+                android:layout_width="155dp"
+                android:layout_height="60dp"
+                android:text="@string/baller"
+                android:textSize="20sp"
+                android:textAllCaps="false"
+                android:layout_marginTop="0dp"
+                android:layout_alignTop="@+id/beginnerBtn"
+                android:layout_alignRight="@+id/btnfinish"
+                android:layout_alignEnd="@+id/btnfinish" />
+
+            <Button
+                android:id="@+id/btnfinish"
+                android:background="@drawable/button"
+                android:alpha="0.7"
+                android:textColor="#FFFFFF"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@id/baller"
+                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="350dp"
+                android:text="@string/finish"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</RelativeLayout>

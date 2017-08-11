@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/league"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/desired_league_bg"
+    tools:context="edna.ceniza.com.swoosh.MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/swoosh_logo"
+        android:paddingTop="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/scndscreenText"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/league"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textAlignment="center"
+        android:textColor="#FFF"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/imageView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:background="@drawable/button"
+        android:alpha="0.7"
+        android:textColor="#FFFFFF"
+        android:id="@+id/mens"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="@string/mens"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/scndscreenText"
+        android:layout_alignLeft="@+id/womens"
+        android:layout_alignStart="@+id/womens"
+        android:layout_alignRight="@+id/womens"
+        android:layout_alignEnd="@+id/womens" />
+
+    <Button
+        android:id="@+id/womens"
+        android:background="@drawable/button"
+        android:alpha="0.7"
+        android:textColor="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/mens"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="@string/womens"
+        android:textAllCaps="false"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/coed"
+        android:background="@drawable/button"
+        android:alpha="0.7"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@+id/womens"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:text="@string/coed"
+        android:textColor="#FFFFFF"
+        android:textAllCaps="false"
+        android:textSize="20sp"/>
+
+    <Button
+        android:id="@+id/next"
+        android:background="@drawable/gradient"
+        android:alpha="0.7"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/next"
+        android:textSize="20sp"
+        android:textColor="#FFFFFF"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"/>
+
+</RelativeLayout>

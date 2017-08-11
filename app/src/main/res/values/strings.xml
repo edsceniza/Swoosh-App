@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="getstarted">GET STARTED</string>
+    <string name="main_h1">GO ALL IN</string>
+    <string name="main_h2">ON GOING ALL OUT</string>
+    <string name="main_h3">Find a team in your city and dominate the league.</string>
+    <string name="league">Desired League:</string>
+    <string name="mens">Mens</string>
+    <string name="womens">Womens</string>
+    <string name="coed">Co-ed</string>
+    <string name="next">next</string>
+    <string name="i_am_a">I am a:</string>
+    <string name="finish">finish</string>
+    <string name="baller">Baller</string>
+    <string name="beginner">Beginner</string>
+</resources>
